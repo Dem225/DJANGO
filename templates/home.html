@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+   
+    <h4> BONJOUR {{ nom }}</h4> 
+    <p> Vous avez age {{age}} ans  </p>
+    <h2> votre coulleur es de  </h2>
+   <p>
+    {% for e in coulleur %}
+        <li>{{e}}</li>
+    {%empty%}
+        <li>Vous n'evez pas de coulleurs</li>
+
+    {%endfor%}
+   </p>
+   <p> connecte </p>
+   <p>
+        {%if est_connecte%}
+            <li>vous etre connecter </li>
+        {% else%}
+            <li>vous n'est pas connecté </li>
+            
+        {%endif%}
+    
+   </p>
+   
+{%endblock%}
