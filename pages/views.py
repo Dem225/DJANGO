@@ -6,7 +6,7 @@ def home_page_view(request):
     context={
         'nom' :'ZEBI',
         'age' : '25',
-        'coulleur' : ['Noir' , 'rouge' ],
+        'coulleur' : ['Noir' , 'rouge','Bleu' , 'Maron' ],
         'est_connecte' : True
     }
     return render(request, 'home.html',context)

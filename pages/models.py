@@ -10,3 +10,6 @@ class ContactMessage(models.Model):
     )
     is_treated=models.BooleanField(default=False)
     
+    def __str__(self):
+        return f"{self.name} - {self.email} - {self.message}"
+                                                        

@@ -1,0 +1,63 @@
+body {
+    height: 120px;
+    background-color: rgb(252, 252, 252);
+}
+
+header {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    height: 100%;
+    width: 30%;
+}
+
+nav {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+
+main{
+    height: 450px;
+    width: 80%;
+    background-color: white;
+    margin: 20px auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 4px;
+    padding-left: 20px;
+}
+
+h4{
+    font-size: 25px;
+    color: blue;
+}
+h2{
+    font-size: 25px;
+    color: blue;
+}
+
+li{
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    list-style-type: none;
+    font-size: 20px;
+    border: 1px solid rgb(104, 98, 98) ;
+    background-color: rgba(169, 169, 169, 0.38);
+}
+/* .coulleurs{
+    height: 20px;
+    width: 100%;
+    border: ;
+} */
