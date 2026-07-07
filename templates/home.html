@@ -1,28 +1,42 @@
-{%extends 'base.html'%}
+{%extends 'base.html'%} {%block content%}
 
-{%block content%}
-
-   
-    <h4> BONJOUR {{ nom }}</h4> 
-    <p> Vous avez age {{age}} ans  </p>
-    <h2> votre coulleur es de  </h2>
-   <p class="coulleurs">
+<div class="formullais">
+  <h4>BONJOUR {{ nom }}</h4>
+  <p>Vous avez age {{age}} ans</p>
+  
+</div>
+<h2>votre coulleur es de</h2>
+<div class="Couleur">
+  <p>
     {% for e in coulleur %}
-        <li>{{e}}</li>
+    <li>{{e}}</li>
     {%empty%}
-        <li>Vous n'evez pas de coulleurs</li>
+    <li>Vous n'evez pas de coulleurs</li>
 
     {%endfor%}
-   </p>
-   <p> connecte </p>
-   <p>
-        {%if est_connecte%}
-            <li>vous etre connecter </li>
-        {% else%}
-            <li>vous n'est pas connecté </li>
-            
-        {%endif%}
+  </p>
+</div>
+
+
+<div class="connection">
+
+    <h3>
+        connecte
+    </h3>
+  <p>
+     {%if est_connecte%}
+    <li>vous etre connecter</li>
+    {% else%}
+    <li>vous n'est pas connecté</li>
+
+    {%endif%}
+  </p>
+</div>
+  <h3> Votre image <h3/>
+<div class="images">
     
-   </p>
-   
+
+</div>
+
+
 {%endblock%}

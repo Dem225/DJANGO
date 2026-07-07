@@ -14,13 +14,20 @@
             <a href="/" >Accueil</a>
             <a href="/a_propos/">A propos</a>
             <a href="/contact/">Contact </a>
-            
+            <a href="/message_list/">Messages </a>
         </nav>
     </header>
+    
     <main>
         {% block content %}
             <p> contenu par defaut </p>
         {%endblock%}
     </main>
+    
+    <footer>
+       <p>&copy; {% now "Y" %} Mon Entreprise. Tous droits réservés.</p>
+   </footer>
+
+   
 </body>
 </html>
