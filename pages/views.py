@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from pages.admin import ContactMessage
+from pages.forms import ContactForm
+from .models import ContactMessage
 
 def home_page_view(request):
     context={
@@ -15,7 +15,20 @@ def home_page_view(request):
 
 
 def contact_page_view(request):
-    return render (request, 'contact.html')
+    success_msg=None
+    if request.method=='POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            success_msg="votre message es bien été soumis !"
+            form=ContactForm()
+    else:
+        form=ContactForm()
+        context={
+            'form':form,
+            'success_msg':success_msg
+        }
+    return render (request, 'contact.html', context)
 
 
 def a_propos_page_view(request):

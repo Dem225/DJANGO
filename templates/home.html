@@ -1,5 +1,5 @@
 {%extends 'base.html'%} {%block content%}
-
+{% load static %}
 <div class="formullais">
   <h4>BONJOUR {{ nom }}</h4>
   <p>Vous avez age {{age}} ans</p>
@@ -32,9 +32,10 @@
     {%endif%}
   </p>
 </div>
-  <h3> Votre image <h3/>
-<div class="images">
+  <h3> Votre image </h3>
     
+<div class="photo">
+    <img src="{% static 'images/phots.jpeg' %}"/>
 
 </div>
 
