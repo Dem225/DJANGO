@@ -1,11 +1,11 @@
 {%extends 'base.html'%}
 {% block content %}
-<div class="Formulais">
+
     
 
     <h4>page de contact</h4>
     {% if  success_msg %}
-        <p style="color: green"> {{success_msg}} </p>
+        <p class="success-message"> {{success_msg}} </p>
 
     {% endif %}
         <form method="post">
@@ -15,7 +15,7 @@
                 <div>
                     {% for error  in form.mon_field_errors   %}
                     
-                    <p>{{error}}</p>
+                    <p class="errorlist">{{error}}</p>
 
                     
                     {% endfor %}
@@ -29,7 +29,6 @@
 
             <button type="submit"> Envoyer </button>
         </form>
-</div>
 
 
     

@@ -35,8 +35,16 @@ def a_propos_page_view(request):
     return render(request , 'a_propos.html')
 
 def message_liste_view(request):
+    
     messages=ContactMessage.objects.all()
     context={
         'messages_list': messages
     }
     return render(request ,'message_list.html',context )
+
+
+
+
+
+def inscription_view(request):
+    return render(request,'inscription.html')
