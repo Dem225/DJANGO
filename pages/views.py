@@ -24,11 +24,11 @@ def contact_page_view(request):
             form=ContactForm()
     else:
         form=ContactForm()
-        context={
+    context={
             'form':form,
             'success_msg':success_msg
-        }
-    return render (request, 'contact.html', context)
+            }
+    return render (request, 'contact.html', context= context)
 
 
 def a_propos_page_view(request):
