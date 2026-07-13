@@ -2,6 +2,7 @@ from django.shortcuts import render
 from pages.forms import ContactForm
 from .models import ContactMessage
 from django.views.generic import TemplateView
+from django.views.generic import ListView
 
 # def home_page_view(request):
 #     context={
@@ -45,16 +46,20 @@ def contact_page_view(request):
 def a_propos_page_view(request):
     return render(request , 'a_propos.html')
 
-def message_liste_view(request):
+# def message_liste_view(request):
     
-    messages=ContactMessage.objects.all()
-    context={
-        'messages_list': messages
-    }
-    return render(request ,'message_list.html',context )
-
-
-
+#     messages=ContactMessage.objects.all()
+#     context={
+#         'messages_list': messages
+#     }
+#     return render(request ,'message_list.html',context )
+    
+class MessageListeViews(ListView) :
+    model=ContactMessage
+    template_name="message_list.html"
+    context_object_name="messages_list"
+    def get_queryset(self):
+        return ContactMessage.objects.filter(is_treated=False)
 
 
 def inscription_view(request):
