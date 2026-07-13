@@ -9,7 +9,11 @@
 <div class="Couleur">
   <p>
     {% for e in coulleur %}
-    <li>{{e}}</li>
+    
+    {% for i in e  %}
+       <li>{{i}}</li>
+    {% endfor %}
+    
     {%empty%}
     <li>Vous n'evez pas de coulleurs</li>
 

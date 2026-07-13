@@ -1,18 +1,29 @@
 from django.shortcuts import render
 from pages.forms import ContactForm
 from .models import ContactMessage
+from django.views.generic import TemplateView
 
-def home_page_view(request):
-    context={
-        'nom' :'ZEBI',
-        'age' : '25',
-        'coulleur' : ['Noir' , 'rouge','Bleu' , 'Maron' ],
-        'est_connecte' : True
+# def home_page_view(request):
+#     context={
+#         'nom' :'ZEBI',
+#         'age' : '25',
+#         'coulleur' : ['Noir' , 'rouge','Bleu' , 'Maron' ],
+#         'est_connecte' : True
         
-    }
-    return render(request, 'home.html',context)
+#     }
+#     return render(request, 'home.html',context)
 
+class HomepageView(TemplateView):
+    template_name= "home.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["nom"] = "WALTER"
+        context["nageom"] = 25
+        context["coulleur"] = ['Noir' , 'rouge','Bleu' , 'Maron' ],
+        context["est_connecte"] = False
+        return context
+    
 
 def contact_page_view(request):
     success_msg=None

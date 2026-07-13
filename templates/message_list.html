@@ -1,37 +1,31 @@
-{%extends 'base.html'%}
-{% block content %}
+{%extends 'base.html'%} {% block content %}
 
 <section>
+  <h2>Messages de Contact</h2>
 
-
-<h2>Messages de Contact</h2>
-
-{% if messages_list%}
-    <ul>
-        {% for messages in messages_list %}
-        <li>
-               <p> <strong> DE : </strong>  
-                {{messages.name}} {{messages.email}} <br>
-                 </p>
+     <section class="Beby">
+         {% if messages_list%}
+         <ul>
+            {% for messages in messages_list %}
+            <li>
+                <p>
+                <strong> DE : </strong> {{messages.name}} {{messages.email}} <br />
+                </p>
 
                 <p>
-                    <strong> DE  </strong>  
-                    {{messages.created_at}}  <br>
+                <strong> DE </strong>
+                {{messages.created_at}} <br />
                 </p>
-                 
+
                 <p>
-                     <strong> DE  </strong>  
-                {{messages.message}}  <br>
+                    <strong> DE </strong>
+                    {{messages.message}} <br />
                 </p>
-                
-        </li>
-        {% endfor %}
-        
-    </ul>
-{% else %}
-    <p>Aucun Message trouvé</p>
-   
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Aucun Message trouvé</p>
+    </section>
 </section>
-{%endif%}
-
-{%endblock%}
+{%endif%} {%endblock%}
