@@ -59,7 +59,7 @@ class MessageListeViews(ListView) :
     template_name="message_list.html"
     context_object_name="messages_list"
     def get_queryset(self):
-        return ContactMessage.objects.filter(is_treated=False)
+        return ContactMessage.objects.filter(is_treated=True)
 
 
 def inscription_view(request):

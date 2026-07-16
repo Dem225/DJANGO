@@ -103,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'FR-FRf'
+LANGUAGE_code = 'FR-FRf'
 
 TIME_ZONE = 'UTC'
 
@@ -122,3 +122,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT=BASE_DIR/"staticfiles"
+
+
+LOGIN_REDIRECT_URL ='/'
+LOGOUT_REDIRECT_URL ='/compte/login/' 
