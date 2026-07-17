@@ -1,6 +1,7 @@
 from django import forms
 from .models import ContactMessage
 from .models import inscription_page
+
 class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactMessage

@@ -19,7 +19,7 @@
                 {% comment %} <a href="{% url "logout" %}" style="color: red;">Déconnexion</a> {% endcomment %}
                 <form method="post" action="{% url "logout" %}">
                     {% csrf_token %}
-                    <button type="submit" style="background-color: red;"> Déconnexion</button>
+                    <button type="submit" style="background-color: red; border-radius: 10px;"> Déconnexion</button>
                 </form>
             {% else %}
                  <a href="{% url "login" %}">connexion </a>

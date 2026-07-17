@@ -1,24 +1,17 @@
 {%extends 'base.html'%} {%block content%}
 {% load static %}
 <div class="formullais">
-  <h4>BONJOUR {{ nom }}</h4>
-  <p>Vous avez age {{age}} ans</p>
-  
-</div>
-<h2>votre coulleur es de</h2>
-<div class="Couleur">
-  <p>
-    {% for e in coulleur %}
-    
-    {% for i in e  %}
-       <li>{{i}}</li>
-    {% endfor %}
-    
-    {%empty%}
-    <li>Vous n'evez pas de coulleurs</li>
 
-    {%endfor%}
-  </p>
+
+  {% if user.is_authenticated  %}
+      <h4>BONJOUR {{user.username}} ! </h4>
+        <p>vous etre connecter </p>
+    {% else %}
+      <p>vous n'etre pas connecter  </p>
+  {% endif %}
+  
+  {% comment %} <p>Vous avez age {{age}} ans</p> {% endcomment %}
+  
 </div>
 
 
@@ -35,13 +28,6 @@
 
     {%endif%}
   </p>
-</div>
-  <h3> Votre image </h3>
-    
-<div class="photo">
-    <img src="{% static 'images/phots.jpeg' %}"/>
-
-</div>
 
 
 {%endblock%}
