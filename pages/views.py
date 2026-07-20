@@ -4,6 +4,12 @@ from .models import ContactMessage
 from django.views.generic import TemplateView
 from django.views.generic import ListView
 
+
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
+
+
 # def home_page_view(request):
 #     context={
 #         'nom' :'ZEBI',
@@ -58,5 +64,7 @@ class MessageListeViews(ListView) :
         return ContactMessage.objects.filter(is_treated=True)
 
 
-def inscription_view(request):
-    return render(request,'inscription.html')
+class SignUpView(CreateView):
+  form_class = UserCreationForm
+  success_url = reverse_lazy('login')
+  template_name = 'registration/sigunp.html'

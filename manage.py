@@ -1,4 +1,4 @@
-vscode_lsp_terminal_prompt_tracker= {}
+
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
